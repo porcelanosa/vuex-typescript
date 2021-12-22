@@ -2,7 +2,7 @@ import { GetterTree } from 'vuex';
 
 import type { UserProfileName, UserRoles } from '@/@types';
 
-// eslint-disable-next-line import/no-cycle
+//eslint-disable-next-line import/no-cycle
 import { RootState } from '@/store';
 
 import { State } from './state';

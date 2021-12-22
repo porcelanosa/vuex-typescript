@@ -19,8 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
+import { computed, defineComponent } from 'vue';
 
 import { useStore } from '@/store';
 import { DocumentsActionTypes } from '@/store/modules/documents/action-types';
@@ -43,13 +42,18 @@ export default defineComponent({
       }
     }
 
+    const isClient = computed(() => store.getters['isClient']);
+    const isAdmin = computed(() => store.getters['isAdmin']);
+
     return {
       fetchDocuments,
+      isClient,
+      isAdmin
     };
-  },
-  computed: {
-    ...mapGetters('profile', ['isClient', 'isAdmin']),
-  },
+  }
+  /*computed: {
+     // ...mapGetters('profile', ['isClient', 'isAdmin']),
+  },*/
 });
 </script>
 
